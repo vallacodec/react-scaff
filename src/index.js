@@ -1,15 +1,30 @@
-import React from 'react'
-import { render } from 'react-dom'
+// ./src/index.jsx
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+
+// Import routing components
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import App from './components/App'
+// Import custom components
+import Home from './components/Home'
+import Cricket from './components/Soccer'
+import Soccer from './components/Cricket'
+import Main from './components/Main'
 import reducer from './reducers'
+
 
 const store = createStore(reducer)
 
 render(
   <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
+    <Router history={browserHistory}>
+     <Route component={Main}>
+        <Route path="/" component={Home}/>
+        <Route path="/soccer" component={Soccer}/>
+        <Route path="/cricket" component={Cricket}/>
+        </Route>
+    </Router>
+    </Provider>,
+    document.getElementById('root')
+);

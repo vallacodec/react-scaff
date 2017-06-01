@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { connect, dispatch } from 'react-redux'
+import { connect } from 'react-redux'
 import { addPlayer } from '../actions/cricket'
 import PropTypes from 'prop-types';
+import Button from '../components/Button'
 
 class Cricket extends Component {
   // Constructor is responsible for setting up props and setting initial stte
@@ -53,10 +54,11 @@ class Cricket extends Component {
        // Update state
        this.setState({cricketPlayers: data});
    }
-   
+
    handlePlayerAdd(e) {
+     let input;
 	event.preventDefault();
-	debugger;
+  this.context.store.dispatch(addPlayer(input.value));
 
    }
 
@@ -71,27 +73,16 @@ class Cricket extends Component {
                </a>
            )
        });
+       console.log(cricNode);
+      let store = this.context.store;
+      debugger;
+      let state = this.state;
 	   let input
        return (
            <div>
                <h1>Cricket page</h1>
 			    <div>
-				  <form onSubmit={e => {
-					e.preventDefault()
-					if (!input.value.trim()) {
-					  return
-					}
-					
-				//	dispatch(addPlayer(input.value))
-					input.value = ''
-				  }}>
-					<input ref={cricNode => {
-					  input = cricNode
-					}} />
-					<button onClick={this.handlePlayerAdd.bind(this)}>
-					  Add Player
-					</button>
-				  </form>
+          <Button/>
                </div>
                <div className="list-group">
                    {cricNode}

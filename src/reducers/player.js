@@ -13,6 +13,7 @@ const player = (state, action) => {
 }
 
 const players = (state = [], action) => {
+  debugger;
   switch (action.type) {
     case 'ADD_PLAYER':
       return [

@@ -20,7 +20,22 @@ const player = (state, action) => {
   };
 }
 
-const players = (state = [], action) => {
+const initialState = [
+    {
+        id: 1,
+        name: 'Jim Carter',
+        year: '2010',
+        offer: '$200,000'
+    },
+    {
+        id: 2,
+        name: 'Samuel Jack',
+        year: '2016',
+        offer: '$300,000'
+
+    }]
+
+const players = (state = initialState, action) => {
 debugger;
   switch (action.type) {
     case 'ADD_PLAYER':

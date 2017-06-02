@@ -7,7 +7,6 @@ const App = () => (
   <div>
     <AddPlayer />
     <VisiblePlayerList />
-    <Cricket/>
   </div>
 )
 

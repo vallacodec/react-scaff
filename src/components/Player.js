@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Player = ({ onClick, completed, name }) => (
-  <li
+  <li className="list-group-item"
     onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'

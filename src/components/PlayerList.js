@@ -13,7 +13,7 @@ const PlayerList = ({ players, onTodoClick }) => (
     )}
   </ul>
 )
-
+console.log(PlayerList);
 PlayerList.propTypes = {
    players: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,

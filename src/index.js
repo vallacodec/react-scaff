@@ -8,8 +8,8 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 // Import custom components
 import Home from './components/Home'
-import Cricket from './components/Soccer'
-import Soccer from './components/Cricket'
+import Soccer from './components/Soccer'
+import App from './components/App'
 import Main from './components/Main'
 import reducer from './reducers'
 
@@ -22,7 +22,7 @@ render(
      <Route component={Main}>
         <Route path="/" component={Home}/>
         <Route path="/soccer" component={Soccer}/>
-        <Route path="/cricket" component={Cricket}/>
+        <Route path="/cricket" component={App}/>
         </Route>
     </Router>
     </Provider>,

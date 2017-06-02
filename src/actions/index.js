@@ -1,4 +1,4 @@
-let playerCount = 0
+let playerCount = 3
 export const addPlayer = (name) => ({
 type: 'ADD_PLAYER',
   id: playerCount++,
